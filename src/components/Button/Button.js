@@ -23,6 +23,10 @@ const ButtonComponent = styled.button`
     background-color: ${({ primary }) => (primary ? '#f6f6f4cc' : '#f6f6f41a')};
     transition: all 0.3s ease;
   }
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export default Button;

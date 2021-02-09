@@ -1,10 +1,19 @@
 import styled from 'styled-components';
 
-export const CardContainer = styled.div`
-  margin: 0 auto;
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-end;
+export const CardContainer = {
+  display: 'flex',
+  gap: '5px',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  alignItems: 'flex-end',
+};
+
+export const Text = styled.p`
+  text-align: center;
+  padding: 2rem 0;
+`;
+
+export const Loading = styled.h1`
+  text-align: center;
+  padding: 2rem 0;
 `;

@@ -1,5 +1,14 @@
+import Movies from './components/Movies/Movies';
+import { GlobalStyle } from './App.element';
+
 function App() {
-  return <h1 className='App'>StreamFlix-FajarRiadi</h1>;
+  return (
+    <>
+      <GlobalStyle />
+      <h1>App</h1>
+      <Movies />
+    </>
+  );
 }
 
 export default App;

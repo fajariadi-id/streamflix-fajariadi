@@ -6,14 +6,12 @@ import Navbar from './components/Navbar/Navbar';
 import { useState } from 'react';
 
 const App = () => {
-  const [wallet, setWallet] = useState(100000);
-  const [owned, setOwned] = useState(false);
-  const [count, setCount] = useState(0);
+  const [wallet, setWallet] = useState(100.0);
+  // const [owned, setOwned] = useState(false);
 
   const purcasing = (price) => {
-    if (wallet > 10000) return setWallet((prevWallet) => prevWallet - price);
-    if (wallet < 10000)
-      return alert('Not Enough Money! Minimum balance must be Rp 10000');
+    if (wallet > 10.0) return setWallet((prevWallet) => prevWallet - price);
+    if (wallet < 10.0) return alert('Minimum balance must be Rp 10.000!');
   };
 
   return (

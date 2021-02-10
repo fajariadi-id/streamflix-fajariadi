@@ -19,7 +19,7 @@ const Navbar = ({ wallet }) => {
           </div>
           <div>
             <p>Wallet,</p>
-            <span>Rp {wallet}</span>
+            <span>Rp {wallet.toFixed(3)}</span> {/* return 100.000 */}
           </div>
         </User>
       </Container>

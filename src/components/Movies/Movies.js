@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Movie from './Movie/Movie';
 import { Text, CardContainer, Loading } from './Movies.element';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { Container } from './MovieInfo/MovieInfo.element';
+
+export const IMG_PATH = 'https://image.tmdb.org/t/p/w300';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -11,8 +14,6 @@ const Movies = () => {
 
   // movies & image end point
   const MOVIES_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_TMDB_PUBLIC_KEY}&language=en-US&page=${page}&region=ID`;
-
-  const IMG_PATH = 'https://image.tmdb.org/t/p/w300';
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -28,7 +29,7 @@ const Movies = () => {
   }, [MOVIES_URL]);
 
   return (
-    <>
+    <Container>
       <InfiniteScroll
         style={CardContainer}
         dataLength={movies.length}
@@ -38,6 +39,7 @@ const Movies = () => {
         {movies.map((movie) => (
           <Movie
             key={movie.id}
+            id={movie.id}
             poster={IMG_PATH + movie.poster_path}
             title={movie.title}
             rating={movie.vote_average}
@@ -50,7 +52,7 @@ const Movies = () => {
       ) : (
         <Text>Hooray! You've seen all Now Playing movies in Indonesia.</Text>
       )}
-    </>
+    </Container>
   );
 };
 

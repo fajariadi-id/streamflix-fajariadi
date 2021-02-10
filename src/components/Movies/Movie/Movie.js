@@ -1,13 +1,17 @@
 import React from 'react';
 import Button from '../../Button/Button';
 import { Card, Poster, CardInfo, Price, BtnContainer } from './Movie.element';
-const Movie = ({ poster, title, rating }) => {
-  const pricing = () => {
-    if (rating < 4) return 'Rp 3.500';
-    if (rating < 7) return 'Rp 8.250';
-    if (rating < 9) return 'Rp 16.350';
-    if (rating > 9) return 'Rp 21.250';
-  };
+import { Link } from 'react-router-dom';
+
+export const pricing = (rating) => {
+  if (rating < 4) return 'Rp 3.500';
+  if (rating < 7) return 'Rp 8.250';
+  if (rating < 9) return 'Rp 16.350';
+  if (rating > 9) return 'Rp 21.250';
+};
+
+const Movie = ({ poster, title, rating, id }) => {
+  const slug = (title) => title.toLowerCase().split(' ').join('-');
 
   return (
     <Card>
@@ -15,11 +19,13 @@ const Movie = ({ poster, title, rating }) => {
 
       <CardInfo>
         <h2>{title}</h2>
-        <Price>{pricing()}</Price>
+        <Price>{pricing(rating)}</Price>
 
         <BtnContainer>
           <Button primary text='Buy' />
-          <Button text='More Info' />
+          <Link to={`/movie/${id}-${slug(title)}`}>
+            <Button text='More Info' />
+          </Link>
         </BtnContainer>
       </CardInfo>
     </Card>

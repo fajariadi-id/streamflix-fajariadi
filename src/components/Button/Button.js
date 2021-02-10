@@ -1,23 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = ({ text, disabled, primary }) => {
+const Button = ({ text, primary, full }) => {
   return (
-    <ButtonComponent disabled={disabled} primary={primary}>
+    <ButtonComponent primary={primary} full={full}>
       {text}
     </ButtonComponent>
   );
 };
 
 const ButtonComponent = styled.button`
+  width: ${({ full }) => (full ? '100%' : 'unset')};
   border: none;
-  margin: 0 5px;
+  margin: 5px;
   padding: 10px 20px;
   border-radius: 5px;
   font-family: inherit;
   background-color: ${({ primary }) => (primary ? '#f6f6f4' : '#f6f6f433')};
   color: ${({ primary }) => (primary ? '#111' : '#f6f6f4')};
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  cursor: pointer;
 
   &:hover {
     background-color: ${({ primary }) => (primary ? '#f6f6f4cc' : '#f6f6f41a')};

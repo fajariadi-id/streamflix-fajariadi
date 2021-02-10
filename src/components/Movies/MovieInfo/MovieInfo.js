@@ -3,6 +3,8 @@ import { FaStar } from 'react-icons/fa';
 import Button from '../../Button/Button';
 import { pricing } from '../Movie/Movie';
 import { IMG_PATH } from '../Movies';
+import RecommendationMovies from '../RecommedationMovies/RecommendationMovies';
+import SimiliarMovies from '../SimiliarMovies/SimiliarMovies';
 import {
   Container,
   Section,
@@ -80,6 +82,9 @@ const MovieInfo = ({ match }) => {
           <Button text='Trailer' full />
         </BtnContainer>
       </Wrapper>
+
+      <RecommendationMovies id={match.params.id} />
+      <SimiliarMovies id={match.params.id} />
     </Container>
   );
 };

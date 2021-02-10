@@ -10,12 +10,12 @@ export const pricing = (rating) => {
   if (rating > 9) return 'Rp 21.250';
 };
 
-const Movie = ({ poster, title, rating, id }) => {
-  const slug = (title) => title.toLowerCase().split(' ').join('-');
+export const slug = (title) => title.toLowerCase().split(' ').join('-');
 
+const Movie = ({ poster, title, rating, id }) => {
   return (
     <Card>
-      <Poster className='card__img' src={poster} alt={title} />
+      <Poster src={poster} alt={title} />
 
       <CardInfo>
         <h2>{title}</h2>

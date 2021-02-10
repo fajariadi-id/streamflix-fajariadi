@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   gap: 50px;
+  margin-bottom: 5rem;
 
   @media (max-width: 800px) {
     flex-wrap: wrap;

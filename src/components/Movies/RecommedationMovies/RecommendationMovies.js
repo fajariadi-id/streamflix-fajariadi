@@ -44,6 +44,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 5rem;
+  justify-content: center;
 `;
 
 export default RecommendationMovies;

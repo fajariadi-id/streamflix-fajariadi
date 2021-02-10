@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = ({ text, primary, full }) => {
+const Button = ({ text, primary, full, onClick }) => {
   return (
-    <ButtonComponent primary={primary} full={full}>
+    <ButtonComponent primary={primary} full={full} onClick={onClick}>
       {text}
     </ButtonComponent>
   );

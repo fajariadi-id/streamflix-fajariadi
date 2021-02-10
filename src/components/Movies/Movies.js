@@ -6,7 +6,7 @@ import { Container } from './MovieInfo/MovieInfo.element';
 
 export const IMG_PATH = 'https://image.tmdb.org/t/p/w300';
 
-const Movies = () => {
+const Movies = ({ onBuy }) => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
@@ -43,6 +43,7 @@ const Movies = () => {
             poster={IMG_PATH + movie.poster_path}
             title={movie.title}
             rating={movie.vote_average}
+            onBuy={onBuy}
           />
         ))}
       </InfiniteScroll>

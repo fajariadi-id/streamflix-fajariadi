@@ -15,7 +15,7 @@ import {
   Price,
 } from './MovieInfo.element';
 
-const MovieInfo = ({ match }) => {
+const MovieInfo = ({ match, onBuy }) => {
   const [movie, setMovie] = useState({});
   const [genres, setGenres] = useState([]);
   const [cast, setCast] = useState([]);
@@ -65,7 +65,7 @@ const MovieInfo = ({ match }) => {
             </span>
           </div>
 
-          <Price>{pricing(movie.vote_average)}</Price>
+          <Price>Rp {pricing(movie.vote_average)}</Price>
 
           <Section>Overview</Section>
           <p>{movie.overview}</p>
@@ -78,7 +78,12 @@ const MovieInfo = ({ match }) => {
         </MovieDetail>
 
         <BtnContainer>
-          <Button text='Beli' primary full />
+          <Button
+            text='Buy'
+            primary
+            full
+            onClick={() => onBuy(pricing(movie.vote_average))}
+          />
           <Button text='Trailer' full />
         </BtnContainer>
       </Wrapper>

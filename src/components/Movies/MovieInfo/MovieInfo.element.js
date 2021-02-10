@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 `;
 
 export const Wrapper = styled.div`
@@ -34,13 +34,17 @@ export const BtnContainer = styled.div`
   border: 1px solid #f6f6f4;
   border-radius: 5px;
   position: sticky;
-  top: 10px;
+  top: 85px;
 `;
 
 export const Poster = styled.img`
   border-radius: 5px;
   position: sticky;
-  top: 10px;
+  top: 85px;
+
+  @media (max-width: 800px) {
+    position: unset;
+  }
 `;
 
 export const Price = styled.h2`

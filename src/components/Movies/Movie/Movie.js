@@ -25,7 +25,7 @@ const Movie = ({ poster, title, rating, id, onBuy }) => {
 
         <BtnContainer>
           <Button primary text='Buy' onClick={() => onBuy(pricing(rating))} />
-          <Link to={`/movie/${id}-${slug(title)}`}>
+          <Link to={`/streamflix-fajariadi/movie/${id}-${slug(title)}`}>
             <Button text='More Info' />
           </Link>
         </BtnContainer>

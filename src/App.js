@@ -10,8 +10,8 @@ const App = () => {
   // const [owned, setOwned] = useState(false);
 
   const purcasing = (price) => {
-    if (wallet > 10.0) return setWallet((prevWallet) => prevWallet - price);
-    if (wallet < 10.0) return alert('Minimum balance must be Rp 10.000!');
+    if (wallet > price) return setWallet((prevWallet) => prevWallet - price);
+    if (wallet < price) return alert('Not Enough Money!');
   };
 
   return (
@@ -20,12 +20,12 @@ const App = () => {
       <Navbar wallet={wallet} />
 
       <Switch>
-        <Route path='/' exact>
+        <Route path='/streamflix-fajariadi' exact>
           <Movies onBuy={purcasing} />
         </Route>
 
         <Route
-          path='/movie/:id-:title'
+          path='/streamflix-fajariadi/movie/:id-:title'
           render={(props) => <MovieInfo {...props} onBuy={purcasing} />}
         />
       </Switch>

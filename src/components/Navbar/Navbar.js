@@ -8,7 +8,10 @@ const Navbar = ({ wallet }) => {
       <Container>
         <Logo>StreamFlix</Logo>
 
-        <NavLink style={{ textDecoration: 'none', color: 'white' }} to='/'>
+        <NavLink
+          style={{ textDecoration: 'none', color: 'white' }}
+          to='/streamflix-fajariadi'
+        >
           Home
         </NavLink>
 

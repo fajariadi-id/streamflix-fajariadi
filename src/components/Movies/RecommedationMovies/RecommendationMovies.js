@@ -30,8 +30,8 @@ const RecommendationMovies = ({ id }) => {
             <Poster src={IMG_PATH + movie.poster_path} alt={movie.title} />
 
             <CardInfo>
-              <h2>{movie.title}</h2>
-              <Price>{pricing(movie.vote_average)}</Price>
+              <h4>{movie.title}</h4>
+              <Price>Rp {pricing(movie.vote_average)}</Price>
             </CardInfo>
           </Card>
         ))}

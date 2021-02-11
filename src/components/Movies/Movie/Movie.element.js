@@ -29,6 +29,8 @@ export const Card = styled.div`
 `;
 
 export const Poster = styled.img`
+  display: block;
+  width: 100%;
   border-radius: 0 0 10px 10px;
 `;
 

@@ -28,7 +28,7 @@ const SimiliarMovies = ({ id }) => {
 
             <CardInfo>
               <h2>{movie.title}</h2>
-              <Price>{pricing(movie.vote_average)}</Price>
+              <Price>Rp {pricing(movie.vote_average)}</Price>
             </CardInfo>
           </Card>
         ))}

@@ -23,7 +23,11 @@ const RecommendationMovies = ({ id }) => {
 
   return (
     <>
-      <h3 style={{ textAlign: 'center' }}>Recommedation Movies</h3>
+      {movies.length === 0 ? (
+        <h3 style={{ textAlign: 'center' }}>No Recommendation Movies</h3>
+      ) : (
+        <h3 style={{ textAlign: 'center' }}>Recommendation Movies</h3>
+      )}
       <Wrapper>
         {movies.map((movie) => (
           <Card key={movie.id}>

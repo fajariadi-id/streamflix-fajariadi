@@ -20,7 +20,12 @@ const SimiliarMovies = ({ id }) => {
   }, [id]);
   return (
     <>
-      <h3 style={{ textAlign: 'center' }}>SimiliarMovies</h3>
+      {movies.length === 0 ? (
+        <h3 style={{ textAlign: 'center' }}>No Similiar Movies</h3>
+      ) : (
+        <h3 style={{ textAlign: 'center' }}>Similiar Movies</h3>
+      )}
+
       <Wrapper>
         {movies.map((movie) => (
           <Card key={movie.id}>

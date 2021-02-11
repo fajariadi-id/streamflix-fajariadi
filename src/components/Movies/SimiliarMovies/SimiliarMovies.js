@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { pricing } from '../Movie/Movie';
-import { Card, CardInfo, Poster, Price } from '../Movie/Movie.element';
-import { Wrapper } from '../RecommedationMovies/RecommendationMovies';
+import {
+  CardSm,
+  Wrapper,
+  PosterSm,
+  CardInfoSm,
+  PriceSm,
+} from '../RecommedationMovies/RecommendationMovies';
 import { IMG_PATH } from '../Movies';
 
 const SimiliarMovies = ({ id }) => {
@@ -28,14 +33,14 @@ const SimiliarMovies = ({ id }) => {
 
       <Wrapper>
         {movies.map((movie) => (
-          <Card key={movie.id}>
-            <Poster src={IMG_PATH + movie.poster_path} alt={movie.title} />
+          <CardSm key={movie.id}>
+            <PosterSm src={IMG_PATH + movie.poster_path} alt={movie.title} />
 
-            <CardInfo>
-              <h2>{movie.title}</h2>
-              <Price>Rp {pricing(movie.vote_average)}</Price>
-            </CardInfo>
-          </Card>
+            <CardInfoSm>
+              <h4>{movie.title}</h4>
+              <PriceSm>Rp {pricing(movie.vote_average)}</PriceSm>
+            </CardInfoSm>
+          </CardSm>
         ))}
       </Wrapper>
     </>

@@ -30,14 +30,14 @@ const RecommendationMovies = ({ id }) => {
       )}
       <Wrapper>
         {movies.map((movie) => (
-          <Card key={movie.id}>
-            <Poster src={IMG_PATH + movie.poster_path} alt={movie.title} />
+          <CardSm key={movie.id}>
+            <PosterSm src={IMG_PATH + movie.poster_path} alt={movie.title} />
 
-            <CardInfo>
+            <CardInfoSm>
               <h4>{movie.title}</h4>
-              <Price>Rp {pricing(movie.vote_average)}</Price>
-            </CardInfo>
-          </Card>
+              <PriceSm>Rp {pricing(movie.vote_average)}</PriceSm>
+            </CardInfoSm>
+          </CardSm>
         ))}
       </Wrapper>
     </>
@@ -49,6 +49,23 @@ export const Wrapper = styled.div`
   flex-wrap: wrap;
   margin-bottom: 5rem;
   justify-content: center;
+`;
+
+export const CardSm = styled(Card)`
+  max-width: 150px;
+  border-radius: 3px;
+`;
+
+export const PosterSm = styled(Poster)`
+  border-radius: 0 0 3px 3px;
+`;
+
+export const CardInfoSm = styled(CardInfo)`
+  padding: 5px;
+`;
+
+export const PriceSm = styled(Price)`
+  font-size: 14px;
 `;
 
 export default RecommendationMovies;
